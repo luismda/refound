@@ -8,7 +8,7 @@ const currentDir = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   plugins: [react()],
-  base: '/book-landing-page/',
+  base: '/refound/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
