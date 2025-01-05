@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    @include label();
+    color: $gray-200;
+  }
+
+  &[data-danger=true] {
+    label {
+      @include label(bold);
+      color: $danger;
+    }
+
+    .trigger {
+      border: 1.5px solid $danger;
+    }
+  }
+
+  &[data-danger=false] {
+    &:focus-within {
+      label {
+        @include label(bold);
+        color: $green-100;
+      }
+  
+      .trigger {
+        border: 1.5px solid $green-100;
+      }
+    }
+  }
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 3rem;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid $gray-300;
+  background-color: $gray-500;
+  outline: none;
+
+  @include body-md();
+  color: $gray-100;
+
+  &[data-placeholder] {
+    color: $gray-200;
+  }
+
+  svg {
+    margin-top: 0.25rem;
+    color: $gray-300;
+  }
+}
+
+.content {
+  overflow: hidden;
+  min-width: var(--radix-select-trigger-width);
+
+  border-radius: 0.5rem;
+  background-color: $gray-500;
+  box-shadow:
+		0px 10px 38px -10px rgba(22, 23, 24, 0.35),
+		0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+}
+
+.viewport {
+  padding: 0.25rem;
+}
+
+.item {
+  outline: none;
+	user-select: none;
+  border-radius: 0.25rem;
+  padding: 0.625rem 0.5rem 0.625rem 2rem;
+
+  display: flex;
+  align-items: center;
+
+  @include body-md();
+  color: $gray-100;
+
+  &:hover {
+    background-color: $gray-400;
+  }
+
+  &:focus {
+    background-color: $gray-400;
+  }
+}
+
+.itemIndicator {
+  position: absolute;
+  left: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

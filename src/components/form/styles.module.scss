@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  
+    h1 {
+      @include heading-lg();
+      color: $gray-100;
+    }
+  
+    p {
+      @include body-md();
+      color: $gray-200;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @include responsive($lg) {
+    width: 462px;
+  }
+}
+
+.group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @include responsive($lg) {
+    grid-template-columns: 1fr 9.625rem;
+  }
+}

@@ -1,0 +1,27 @@
+.container {
+  all: unset;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  height: 3rem;
+  padding: 0 1.25rem;
+  border-radius: 0.5rem;
+  background-color: $green-100;
+  cursor: pointer;
+  transition: 0.25s;
+
+  @include body-md(bold);
+  color: $white;
+
+  &:hover:not(:disabled) {
+    background-color: $green-200;
+  }
+
+  &:disabled {
+    opacity: 50%;
+    cursor: default;
+  }
+}

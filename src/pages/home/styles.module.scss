@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: center;
+
+  min-width: 100vw;
+  min-height: 100vh;
+
+  padding-top: 3rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 1rem 3rem;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  @include responsive($lg) {
+    width: 1082px;
+    padding: 0;
+
+    main {
+      flex-direction: row;
+    }
+  }
+}

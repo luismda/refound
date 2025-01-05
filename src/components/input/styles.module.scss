@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    @include label();
+    color: $gray-200;
+  }
+
+  input {
+    height: 3rem;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid $gray-300;
+    background-color: $gray-500;
+    outline: none;
+
+    @include body-md();
+    color: $gray-100;
+
+    &::placeholder {
+      color: $gray-200;
+    }
+  }
+
+  &[data-danger=true] {
+    label {
+      @include label(bold);
+      color: $danger;
+    }
+
+    input {
+      border: 1.5px solid $danger;
+    }
+  }
+
+  &[data-danger=false] {
+    &:focus-within {
+      label {
+        @include label(bold);
+        color: $green-100;
+      }
+  
+      input {
+        border: 1.5px solid $green-100;
+      }
+    }
+  }
+}
